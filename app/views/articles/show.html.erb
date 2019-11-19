@@ -1,14 +1,29 @@
 <div class="container">
-  <h2><%= @article.title %>
-    <%= link_to new_article_path do %>
-    <i class="fas fa-edit"></i>
-    <% end %>
-   <%= link_to article_path, method: :delete, data: { confirm: "Are you sure?" } do %>
-     <i class="fas fa-trash-alt"></i>
-     <% end %>
-  </h2>
-   <p><%= @article.content %></p>
+<h1><%= @article.title %>
+<i class="fas fa-edit"> <%= link_to('Edit', edit_article_path(@article)) %> </i>
+
+
+
+<i class="fas fa-trash-alt"> <%= link_to "Delete", article_path(@article),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></i>
+
+</h1>
+
+ <p><%= @article.content %></p>
    <img src="http://lorempixel.com/800/300/city/" alt="random-pictures" width="800">
    <p><%= @article.content %></p>
    <p><%= @article.content %></p>
+
+<p>
+  <%= link_to('return to list', articles_path) %>
+</p>
+
+
+
+<%= @article.content.html_safe %>
+
+
 </div>
+
+

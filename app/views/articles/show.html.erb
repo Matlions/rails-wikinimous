@@ -1,0 +1,14 @@
+<div class="container">
+  <h2><%= @article.title %>
+    <%= link_to new_article_path do %>
+    <i class="fas fa-edit"></i>
+    <% end %>
+   <%= link_to article_path, method: :delete, data: { confirm: "Are you sure?" } do %>
+     <i class="fas fa-trash-alt"></i>
+     <% end %>
+  </h2>
+   <p><%= @article.content %></p>
+   <img src="http://lorempixel.com/800/300/city/" alt="random-pictures" width="800">
+   <p><%= @article.content %></p>
+   <p><%= @article.content %></p>
+</div>
